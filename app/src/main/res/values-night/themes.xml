@@ -10,6 +10,7 @@
     <style name="Theme.ViewSystem" parent="Base.Theme.ViewSystem">
         <item name="colorPrimary">@color/best_deals_green</item>
         <item name="colorPrimaryContainer">@color/best_deals_light</item>
+        <item name="colorOnPrimaryContainer">@color/black</item>
         <item name="colorPrimaryDark">@color/best_deals_green700</item>
         <item name="colorSecondary">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>

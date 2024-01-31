@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.view.WindowManager
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.annotation.IdRes
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -76,6 +77,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         }*/
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
+        enableEdgeToEdge()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

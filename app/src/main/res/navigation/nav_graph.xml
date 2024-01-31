@@ -4,6 +4,11 @@
     android:id="@+id/nav_graph">
 
     <fragment android:id="@+id/routing_page"
-        android:name="com.example.viewsystem.core.presentation.routing.RoutingFragment" />
+        android:name="com.example.viewsystem.core.presentation.routing.RoutingFragment"
+        android:label="Routing Page" />
+
+    <fragment android:id="@+id/flipping_item_page"
+        android:name="com.example.viewsystem.feature.flippingitem.FlippingItemFragment"
+        android:label="Flipping Item" />
 
 </navigation>

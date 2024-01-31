@@ -9,4 +9,7 @@
     <string name="you_are_not_connected_to_the_internet">You are not connected to the internet</string>
     <string name="no_internet_des_1">Uh-oh! It looks like you\'re not connected to the internet right now. Please check your internet connection!</string>
     <string name="unknown_error">Unknown Error</string>
+
+    <string name="lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id felis turpis.</string>
+    <string name="lorem_large" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pellentesque lorem in molestie rhoncus. Ut posuere sem fermentum justo faucibus, non imperdiet nisl facilisis. Maecenas in nunc scelerisque, suscipit neque nec, placerat nibh. Vivamus dapibus, urna id tincidunt interdum, risus sapien molestie ex, eget gravida diam diam in augue. Pellentesque imperdiet turpis ut lectus efficitur scelerisque vitae quis massa. Etiam vestibulum ipsum ut sem suscipit, sed sollicitudin ipsum pellentesque. Proin euismod nec diam in maximus. Integer vitae bibendum mi. Aenean vitae efficitur metus. Aenean sit amet enim urna. Donec eleifend in nisl id rutrum. In magna quam, eleifend ut tellus in, euismod interdum nisi. In ac dolor orci.</string>
 </resources>
