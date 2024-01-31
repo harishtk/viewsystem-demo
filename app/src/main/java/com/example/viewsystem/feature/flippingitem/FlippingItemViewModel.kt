@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 private val defaultFlippingItems = listOf(
@@ -39,11 +38,32 @@ private val defaultFlippingItems = listOf(
         "This is a sample description which is a little bit long just to cover two lines.",
         System.currentTimeMillis() - TimeUnit.DAYS.toMillis(2)
     ),
+    FlippingItem(
+        4,
+        "Item 4",
+        "Subtitle 4",
+        "This is a sample description which is a little bit long just to cover two lines.",
+        System.currentTimeMillis() - TimeUnit.DAYS.toMillis(3)
+    ),
+    FlippingItem(
+        5,
+        "Item 5",
+        "Subtitle 5",
+        "This is a sample description which is a little bit long just to cover two lines.",
+        System.currentTimeMillis() - TimeUnit.DAYS.toMillis(5)
+    ),
+    FlippingItem(
+        6,
+        "Item 6",
+        "Subtitle 6",
+        "This is a sample description which is a little bit long just to cover two lines.",
+        System.currentTimeMillis() - TimeUnit.DAYS.toMillis(6)
+    ),
 )
 
 class FlippingItemViewModel : ViewModel() {
 
-    private val _flippingItems: MutableStateFlow<List<FlippingItemModel>> = MutableStateFlow(listOf())
+    private val _flippingItems: MutableStateFlow<List<FlippingUiModel>> = MutableStateFlow(listOf())
     val flippingItems = _flippingItems
         .stateIn(
             scope = viewModelScope,
@@ -54,22 +74,38 @@ class FlippingItemViewModel : ViewModel() {
     init {
         _flippingItems.update {
             defaultFlippingItems
-                .map { FlippingItemModel.Item(it, false) }
+                .map { FlippingUiModel.Item(it, false) }
         }
+    }
+
+    fun handleBackPressed(): Boolean {
+        val consumed = flippingItems.value.count { (it as FlippingUiModel.Item).isFlipped } > 0
+        viewModelScope.launch {
+            if (consumed) {
+                val newList: List<FlippingUiModel> = flippingItems.value.filterIsInstance<FlippingUiModel.Item>()
+                    .map { it.copy(isFlipped = false) }
+                _flippingItems.update { newList }
+            }
+        }
+        return consumed
     }
 
     fun flipItem(id: Int) {
         viewModelScope.launch {
-            val newList: List<FlippingItemModel> = flippingItems.value.filterIsInstance<FlippingItemModel.Item>()
+            val newList: List<FlippingUiModel> = flippingItems.value.filterIsInstance<FlippingUiModel.Item>()
                 .map {
                     if (it.item.id == id) {
                         it.copy(isFlipped = !it.isFlipped)
                     } else {
+                        // it.copy(isFlipped = false)
                         it
                     }
                 }
-            Timber.d("Flipped Items: ${newList.count { (it as FlippingItemModel.Item).isFlipped }}")
             _flippingItems.update { newList }
         }
     }
+}
+
+interface FlippingUiModel {
+    data class Item(val item: FlippingItem, val isFlipped: Boolean) : FlippingUiModel
 }

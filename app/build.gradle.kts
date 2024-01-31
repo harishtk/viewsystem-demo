@@ -23,12 +23,10 @@ object Ext {
 }
 android {
     namespace = "com.example.viewsystem"
-    compileSdk = libs.versions.compileSdk.get().toIntOrNull()
-    namespace = "com.example.viewsystem"
-    compileSdk = 34
+    compileSdk = Ext.targetSdk
 
     defaultConfig {
-        applicationId = "com.pepul.shopsseller.app"
+        applicationId = "com.example.viewsystem"
         minSdk = Ext.minSdk
         targetSdk = Ext.targetSdk
         versionCode = generateVersionCode()
