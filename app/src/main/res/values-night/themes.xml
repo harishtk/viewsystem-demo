@@ -1,0 +1,122 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ViewSystem" parent="Base.Theme.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:forceDarkAllowed" tools:targetApi="Q">false</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="Q">false</item>
+    </style>
+
+    <style name="Theme.ViewSystem" parent="Base.Theme.ViewSystem">
+        <item name="colorPrimary">@color/best_deals_green</item>
+        <item name="colorPrimaryContainer">@color/best_deals_light</item>
+        <item name="colorPrimaryDark">@color/best_deals_green700</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:colorBackground">@color/best_deals_background</item>
+        <item name="colorOnBackground">@color/white</item>
+
+        <item name="isLightTheme">false</item>
+        <item name="android:isLightTheme" tools:targetApi="Q">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <style name="Theme.App.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenBackground">@color/lime_green200</item>
+        <item name="postSplashScreenTheme">@style/Theme.ViewSystem</item>
+        <item name="isLightTheme">false</item>
+        <item name="android:isLightTheme" tools:targetApi="Q">false</item>
+    </style>
+
+    <style name="Theme.WebView" parent="Base.Theme.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/material_bluegrey900</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimarySurface">@color/material_red700</item>
+        <item name="colorSurface">@color/material_bluegrey700</item>
+        <item name="colorSurfaceVariant">@color/white_grey</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceInverse">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/best_deals_green</item>
+        <item name="colorSecondaryVariant">@color/best_deals_green700</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/toolbar_background</item>
+        <item name="isLightTheme">false</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextBox" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="colorSecondary">@color/core_white</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button" parent="ThemeOverlay.Material3.Button">
+        <item name="colorPrimary">@color/best_deals_green</item>
+        <item name="android:colorPrimary">@color/best_deals_green</item>
+        <item name="colorOnPrimary">@color/core_white</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Chip.Action" parent="">
+        <!--<item name="colorPrimary">@color/yellow_200</item>-->
+
+    </style>
+
+    <!-- Chips -->
+    <style name="ThemeOverlay.App.Chip.Choice" parent="">
+        <!--<item name="colorPrimary">@color/yellow_200</item>-->
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/black_900</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+
+    <!-- Material Card -->
+    <style name="ThemeOverlay.App.Card" parent="">
+        <item name="colorPrimary">@color/best_deals_green</item>
+        <item name="colorSurface">@color/best_deals_green700</item>
+        <item name="colorOnSurface">@color/white</item>
+    </style>
+    <!-- END - Material Card -->
+
+    <!-- Bottom Navigation View -->
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <!--<item name="colorSurface">@color/best_deals_dark</item>-->
+        <item name="colorSecondaryContainer">@color/transparent</item>
+        <item name="colorSurface">@color/best_deals_dark</item>
+        <!-- Primary brand color. -->
+        <!--<item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/blue_grey_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorSurface">@color/blue_grey_700</item>
+        <item name="colorSurfaceVariant">@color/white_grey</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceInverse">@color/black</item>-->
+        <!-- Secondary brand color. -->
+        <!--<item name="colorSecondary">@color/yellow_200</item>
+        <item name="colorSecondaryVariant">@color/yellow_700</item>
+        <item name="colorOnSecondary">@color/black</item>-->
+    </style>
+    <!-- END - Bottom Navigation View -->
+
+    <!-- Navigation Rail -->
+    <style name="ThemeOverlay.App.NavigationRailView" parent="">
+        <item name="colorSecondaryContainer">@color/transparent</item>
+        <item name="colorSurface">@color/best_deals_dark</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/core_grey_40</item>
+    </style>
+    <!-- END - Navigation Rail -->
+
+    <!-- App bars -->
+    <style name="ThemeOverlay.App.Toolbar" parent="ThemeOverlay.Material3.Toolbar.Surface">
+        <item name="colorSurface">@color/best_deals_dark_gray</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/blue_grey_50</item>
+    </style>
+    <!-- END - Appbars -->
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="best_deals_green">#27AE60</color>
+    <color name="best_deals_green700a30">#4D27AE60</color>
+    <color name="best_deals_green700a10">#1A27AE60</color>
+    <color name="best_deals_green100">#1DD38F</color>
+    <color name="best_deals_green700">#11512C</color>
+    <color name="best_deals_background">#1E1E1E</color>
+    <color name="best_deals_yellow">#FDD245</color>
+    <color name="best_deals_dark_yellow">#FAAD14</color>
+    <color name="best_deals_purple">#8427C8</color>
+    <color name="best_deals_dark_purple">#2C003F</color>
+    <color name="best_deals_dark">#16171C</color>
+    <color name="best_deals_light">#CDFAD0</color>
+    <color name="best_deals_dark_gray">#1E2430</color>
+    <color name="best_deals_bluegrey">#2B364A</color>
+    <color name="best_deals_blue600">#018BF6</color>
+    <color name="best_deals_blue400">#34A2F8</color>
+    <color name="best_deals_blue400a30">#4D34A2F8</color>
+    <color name="best_deals_green400">#1DD38F</color>>
+    <color name="best_deals_orange400">#FF8E25</color>
+    <color name="best_deals_orange400a30">#4DFF8E25</color>
+    <color name="best_deals_orange500">#FAAD14</color>
+    <color name="best_deals_teal400">#36E3D9</color>
+    <color name="best_deals_teal400a30">#4D36E3D9</color>
+
+    <color name="text_secondary_alt">#969A9E</color>
+    <color name="text_color_fancy">#20A2E5</color>
+
+    <color name="ripple_color">#26000000</color>
+    <color name="chip_stroke_color">#464646</color>
+
+    <color name="radio_switch_color">@color/best_deals_green100</color>
+    <color name="switch_un_check_color">#364A52</color>
+
+    <color name="outline_stroke_color">#6C7078</color>
+    <color name="grey_divider">#26979797</color>
+    <color name="white_grey">#EFEFEF</color>
+
+    <color name="backdrop_primary_old">#33FAAD14</color>
+    <color name="backdrop_primary">#FBEFD3</color>
+
+    <color name="blue_grey_50">#ECEFF1</color>
+    <color name="blue_grey_400">#78909C</color>
+    <color name="blue_grey_800">#37474F</color>
+    <color name="blue_grey_900">#263238</color>
+
+    <color name="lime_green200">#C5F601</color>
+    <color name="lime_green700">#799800</color>
+
+    <color name="black_200">#333844</color>
+    <color name="black_800">#1E2430</color>
+    <color name="black_600">#252A36</color>
+    <color name="black_900">#121825</color>
+
+    <color name="green_A700">#00C853</color>
+
+    <color name="gray200_15">#26AAAAAA</color>
+    <color name="gray850">#252A36</color>
+    <color name="gray250">#F0F0F0</color>
+
+    <color name="light_red">#4DFF6057</color>
+    <color name="light_grey">#FFCECECE</color>
+    <color name="material_red400a30">#4DEF5350</color>
+
+    <color name="slider_thumb_track_color_active">#00B2FF</color>
+    <color name="slider_thumb_track_color_inactive">#979797</color>
+</resources>

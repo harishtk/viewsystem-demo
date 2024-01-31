@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_icon_size">24dp</dimen>
+    <dimen name="giant_icon_size">48dp</dimen>
+    <dimen name="xxlarge_icon_size">40dp</dimen>
+    <dimen name="xlarge_icon_size">32dp</dimen>
+    <dimen name="large_icon_size">28dp</dimen>
+    <dimen name="large_medium_icon_size">24dp</dimen>
+    <dimen name="medium_icon_size">20dp</dimen>
+    <dimen name="small_icon_size">16dp</dimen>
+    <dimen name="small_icon_default_padding">2dp</dimen>
+    <dimen name="touchable_icon_size">48dp</dimen>
+
+    <dimen name="text_size_large">21sp</dimen>
+    <dimen name="text_size_giant">28sp</dimen>
+    <dimen name="text_size_huge">26sp</dimen>
+    <dimen name="text_size_very_small">14sp</dimen>
+    <dimen name="text_size_small">17sp</dimen>
+    <dimen name="text_size_medium">19sp</dimen>
+    <dimen name="text_size_tiny">12sp</dimen>
+    <dimen name="text_size_xtiny">10sp</dimen>
+    <dimen name="text_size_minute">8sp</dimen>
+    <dimen name="spacer_size_very_small">20dp</dimen>
+    <dimen name="spacer_height_small">40dp</dimen>
+    <dimen name="spacer_size_small">40dp</dimen>
+    <dimen name="default_spacer_height">60dp</dimen>
+    <dimen name="spacer_height_large">80dp</dimen>
+    <dimen name="spacer_height_xlarge">100dp</dimen>
+    <dimen name="spacer_height_huge">120dp</dimen>
+    <dimen name="spacer_size_large">80dp</dimen>
+    <dimen name="default_spacer_size">60dp</dimen>
+
+    <dimen name="inset_0">0dp</dimen>
+    <dimen name="inset_small">8dp</dimen>
+    <dimen name="inset_very_small">4dp</dimen>
+    <dimen name="inset_tiny">2dp</dimen>
+    <dimen name="inset_medium">12dp</dimen>
+    <dimen name="inset_large">16dp</dimen>
+    <dimen name="inset_very_large">20dp</dimen>
+    <dimen name="inset_large_medium">14dp</dimen>
+
+    <dimen name="button_corner_size">@dimen/corner_size_medium</dimen>
+    <dimen name="default_fab_inset">25dp</dimen>
+
+    <dimen name="corner_size_tiny">2dp</dimen>
+    <dimen name="corner_size_small">4dp</dimen>
+    <dimen name="default_corner_size">8dp</dimen>
+    <dimen name="corner_size_medium">12dp</dimen>
+    <dimen name="corner_size_large">16dp</dimen>
+    <dimen name="corner_size_xlarge">20dp</dimen>
+    <dimen name="corner_size_xxlarge">24dp</dimen>
+    <dimen name="default_fab_elevation">4dp</dimen>
+    <dimen name="large_fab_size">70dp</dimen>
+
+    <dimen name="shops_bottom_bar_size">52dp</dimen>
+    <dimen name="shops_nav_rail_size">52dp</dimen>
+    <dimen name="default_top_destination_padding">52dp</dimen>
+    <dimen name="default_bottom_sheet_radius">20dp</dimen>
+    <dimen name="default_action_bar_size">48dp</dimen>
+    <dimen name="default_bottom_bar_height">56dp</dimen>
+    <dimen name="large_bottom_bar_height">64dp</dimen>
+    <dimen name="large_action_bar_size">56dp</dimen>
+
+    <dimen name="bottom_sheet_height_medium">600dp</dimen>
+
+    <dimen name="default_card_inset">5dp</dimen>
+    <dimen name="default_card_elevation">2dp</dimen>
+
+    <dimen name="default_touchable_padding">4dp</dimen>
+    <dimen name="touchable_padding_large">10dp</dimen>
+    <dimen name="touchable_padding_xlarge">14dp</dimen>
+    <dimen name="default_touchable_inset">4dp</dimen>
+    <dimen name="default_touchable_large">10dp</dimen>
+    <dimen name="touchable_inset_large">8dp</dimen>
+    <dimen name="touchable_inset_small">2dp</dimen>
+    <dimen name="comments_min_width">120dp</dimen>
+    <dimen name="multiline_text_max_height">80dp</dimen>
+    <dimen name="large_card_size">200dp</dimen>
+    <dimen name="medium_card_size">120dp</dimen>
+    <dimen name="tab_indicator_size">8dp</dimen>
+
+    <dimen name="default_text_area_height">140dp</dimen>
+    <dimen name="text_area_height_small">100dp</dimen>
+
+    <dimen name="default_single_container_height">48dp</dimen>
+    <dimen name="container_height_min">40dp</dimen>
+
+    <dimen name="profile_image_size_very_small">36dp</dimen>
+    <dimen name="profile_image_size_small">40dp</dimen>
+    <dimen name="profile_image_size_small_medium">44dp</dimen>
+    <dimen name="profile_image_size_medium">50dp</dimen>
+    <dimen name="profile_image_size_large_medium">60dp</dimen>
+    <dimen name="profile_image_size_large">70dp</dimen>
+    <dimen name="profile_image_size_xlarge">90dp</dimen>
+    <dimen name="profile_image_size_xxlarge">110dp</dimen>
+    <dimen name="profile_image_size_xxxlarge">130dp</dimen>
+
+    <dimen name="image_size_small">30dp</dimen>
+    <dimen name="image_size_large_medium">48dp</dimen>
+    <dimen name="image_size_large">54dp</dimen>
+
+    <dimen name="default_stroke_width">1dp</dimen>
+    <dimen name="stroke_width_medium">2dp</dimen>
+    <dimen name="icon_overlay_progress_size">42dp</dimen>
+    <dimen name="otp_view_item_spacing">10dp</dimen>
+    <dimen name="otp_view_border_size">2dp</dimen>
+
+    <dimen name="default_adapter_circle_image_size">100dp</dimen>
+    <dimen name="chip_min_width">120dp</dimen>
+    <dimen name="chip_max_width">200dp</dimen>
+
+    <dimen name="bottom_app_bar_inset">16dp</dimen>
+
+    <dimen name="mtrl_btn_max_width_small">240dp</dimen>
+
+    <dimen name="default_tab_badge_vertical_offset">9dp</dimen>
+    <dimen name="default_nav_badge_horizontal_offset">9dp</dimen>
+    <dimen name="default_nav_badge_vertical_offset">12dp</dimen>
+
+    <dimen name="nav_badge_horizontal_offset_small">4dp</dimen>
+    <dimen name="nav_badge_vertical_offset_small">4dp</dimen>
+
+    <dimen name="badge_size_small">10dp</dimen>
+    <dimen name="badge_size_default">12dp</dimen>
+    <dimen name="badge_radius_default">4dp</dimen>
+
+    <dimen name="no_dp">0dp</dimen>
+
+    <dimen name="default_bottom_sheet_peek_height">600dp</dimen>
+    <dimen name="default_bottom_bar_indicator_width">24dp</dimen>
+    <dimen name="default_bottom_bar_indicator_height">3dp</dimen>
+    <dimen name="default_separator_height">1dp</dimen>
+    <dimen name="default_separator_size">1dp</dimen>
+    <dimen name="input_container_max_width">600dp</dimen>
+    <dimen name="default_btn_max_width">320dp</dimen>
+    <dimen name="small_btn_width_max">280dp</dimen>
+    <dimen name="small_btn_height_max">36dp</dimen>
+    <dimen name="footer_btn_max_width">600dp</dimen>
+    <dimen name="small_btn_width_min">200dp</dimen>
+    <dimen name="profile_image_size_max">@dimen/profile_image_size_xxlarge</dimen>
+    <dimen name="text_field_height_small">48dp</dimen>
+    <dimen name="bottom_sheet_handle_size">60dp</dimen>
+    <dimen name="dialog_container_max_width">400dp</dimen>
+
+    <dimen name="bottom_sheet_peek_height_mid_tall">400dp</dimen>
+    <dimen name="bottom_sheet_peek_height_mid">300dp</dimen>
+    <dimen name="text_btn_height_small">36dp</dimen>
+
+    <dimen name="photos_margin_inset">80dp</dimen>
+    <dimen name="progress_indicator_size_small">24dp</dimen>
+
+    <dimen name="default_speech_bubble_width">270dp</dimen>
+    <dimen name="default_speech_bubble_height">120dp</dimen>
+    <dimen name="min_speech_bubble_width">240dp</dimen>
+    <dimen name="min_speech_bubble_height">90dp</dimen>
+    <dimen name="min_speech_bubble_width_small">150dp</dimen>
+    <dimen name="min_speech_bubble_height_small">60dp</dimen>
+
+    <dimen name="comments_thumbnail_width">80dp</dimen>
+    <dimen name="content_loader_height_compact">4dp</dimen>
+    <dimen name="default_swipe_controller_offset">130dp</dimen>
+
+    <dimen name="viewpager_decor_margin_default">10dp</dimen>
+    <dimen name="viewpager_decor_offset_default">20dp</dimen>
+    <dimen name="viewpager_decor_margin_with_offset_default">30dp</dimen>
+    <dimen name="btn_horizontal_inset">20dp</dimen>
+</resources>
