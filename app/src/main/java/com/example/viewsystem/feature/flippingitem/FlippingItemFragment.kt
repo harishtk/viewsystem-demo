@@ -2,6 +2,7 @@ package com.example.viewsystem.feature.flippingitem
 
 import android.animation.AnimatorSet
 import android.animation.ValueAnimator
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,8 @@ import com.example.viewsystem.R
 import com.example.viewsystem.core.util.time.TimeAgo
 import com.example.viewsystem.databinding.FragmentFlippingItemBinding
 import com.example.viewsystem.databinding.ItemFlippingViewBinding
+import com.example.viewsystem.extensions.themeColor
+import com.google.android.material.transition.MaterialContainerTransform
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -43,9 +46,46 @@ class FlippingItemFragment : Fragment(R.layout.fragment_flipping_item) {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        sharedElementEnterTransition = MaterialContainerTransform().apply {
+            drawingViewId = R.id.fragment_container
+            scrimColor = Color.TRANSPARENT
+            setAllContainerColors(requireContext().themeColor(com.google.android.material.R.attr.colorSurface))
+
+            /*transitionListener(
+                onTransitionStart = { binding.icCamera.isVisible = false; },
+                onTransitionEnd = {
+                    binding.icCamera.apply { scaleX = 0.8f; scaleY = 0.8f; }
+                    TransitionManager.beginDelayedTransition(
+                        binding.profileImageContainer as ViewGroup,
+                        ScaleTransition().apply {
+                            duration = 150L
+                            interpolator = OvershootInterpolator(2f)
+                        }
+                    )
+                    binding.icCamera.apply { scaleX = 1f; scaleY = 1f; }
+                    binding.icCamera.isVisible = true
+                }
+            )*/
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentFlippingItemBinding.bind(view)
+        binding.bindToolbar()
+
+        val from = arguments?.getString("from", "unknown")
+        if (from == "routing") {
+            postponeEnterTransition()
+
+            val titleTransition = arguments?.getString("titleTransitionName") ?: ""
+            binding.toolbarIncluded.toolbarTitle.transitionName = titleTransition
+
+            startPostponedEnterTransition()
+        }
 
         binding.bindState(
             flippingItems = viewModel.flippingItems,
@@ -69,6 +109,11 @@ class FlippingItemFragment : Fragment(R.layout.fragment_flipping_item) {
             .onEach(adapter::submitList)
             .flowWithLifecycle(viewLifecycleOwner.lifecycle)
             .launchIn(viewLifecycleOwner.lifecycleScope)
+    }
+
+    private fun FragmentFlippingItemBinding.bindToolbar() {
+        toolbarIncluded.toolbarTitle.text =
+            getString(R.string.title_flipping_recyclerview_item)
     }
 
     private fun handleBackPressed() {
@@ -149,18 +194,20 @@ private class FlippingItemAdapter(
                 onItemClick(data)
             }
 
-            val translateAnimation = TranslateAnimation(
-                0f, 0f, 100f, 0f
-            )
-            val alphaAnimation = AlphaAnimation(0f, 1f)
-            AnimationSet(true).apply {
-                duration = 300
-                interpolator = DecelerateInterpolator()
-                startOffset = bindingAdapterPosition * 100L
-                addAnimation(translateAnimation)
-                addAnimation(alphaAnimation)
-            }.also {
-                root.startAnimation(it)
+            if (bindingAdapterPosition <= 10) {
+                val translateAnimation = TranslateAnimation(
+                    0f, 0f, 100f, 0f
+                )
+                val alphaAnimation = AlphaAnimation(0f, 1f)
+                AnimationSet(true).apply {
+                    duration = 300
+                    interpolator = DecelerateInterpolator()
+                    startOffset = bindingAdapterPosition * 100L
+                    addAnimation(translateAnimation)
+                    addAnimation(alphaAnimation)
+                }.also {
+                    root.startAnimation(it)
+                }
             }
         }
 

@@ -81,6 +81,7 @@
 
     <dimen name="default_text_area_height">140dp</dimen>
     <dimen name="text_area_height_small">100dp</dimen>
+    <dimen name="text_area_max_height">180dp</dimen>
 
     <dimen name="default_single_container_height">48dp</dimen>
     <dimen name="container_height_min">40dp</dimen>

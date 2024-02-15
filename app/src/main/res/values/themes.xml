@@ -12,8 +12,6 @@
         <item name="colorPrimaryContainer">@color/best_deals_light</item>
         <item name="colorOnPrimaryContainer">@color/black</item>
         <item name="colorPrimaryDark">@color/best_deals_green700</item>
-        <item name="colorSecondary">@color/black</item>
-        <item name="colorOnBackground">@color/black</item>
 
         <item name="isLightTheme">true</item>
         <item name="android:isLightTheme" tools:targetApi="Q">true</item>

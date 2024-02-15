@@ -23,4 +23,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "View System"
 include(":app")
+include(":external:calendarview")
  

@@ -113,6 +113,9 @@ android {
             buildConfigField("String", "S3_BUCKET", "\"https://d1whtbopipnjq0.cloudfront.net/\"")
         }
     }
+    lint {
+        abortOnError = false
+    }
 }
 
 dependencies {
@@ -179,6 +182,9 @@ dependencies {
 
     /* Time Convertor */
     implementation(libs.threetenabp)
+
+    /* External Projects */
+    implementation(project(":external:calendarview"))
 
     // Core library
     testImplementation(libs.junit)

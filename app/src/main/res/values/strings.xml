@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">View System</string>
+
+    <string name="title_flipping_recyclerview_item">Flipping RecyclerView Item</string>
+    <string name="title_lego_text_blocks">Lego Text Blocks</string>
+    <string name="title_calendar_view">Haibin CalendarView</string>
+
     <string name="unable_to_perform_this_action">Unable to perform this action!</string>
 
     <string name="something_went_wrong_try_later">Something went wrong! try again later.</string>
@@ -10,6 +15,21 @@
     <string name="no_internet_des_1">Uh-oh! It looks like you\'re not connected to the internet right now. Please check your internet connection!</string>
     <string name="unknown_error">Unknown Error</string>
 
+    <string-array name="english_week_string_array">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
     <string name="lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id felis turpis.</string>
     <string name="lorem_large" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pellentesque lorem in molestie rhoncus. Ut posuere sem fermentum justo faucibus, non imperdiet nisl facilisis. Maecenas in nunc scelerisque, suscipit neque nec, placerat nibh. Vivamus dapibus, urna id tincidunt interdum, risus sapien molestie ex, eget gravida diam diam in augue. Pellentesque imperdiet turpis ut lectus efficitur scelerisque vitae quis massa. Etiam vestibulum ipsum ut sem suscipit, sed sollicitudin ipsum pellentesque. Proin euismod nec diam in maximus. Integer vitae bibendum mi. Aenean vitae efficitur metus. Aenean sit amet enim urna. Donec eleifend in nisl id rutrum. In magna quam, eleifend ut tellus in, euismod interdum nisi. In ac dolor orci.</string>
+    <string name="content_description_options">Options</string>
+    <string name="content_description_app_info">Application Info</string>
+    <string name="content_description_send_message">Send Message</string>
+    <string name="content_description_receipt_status_indicator">Message Receipt Status Indicator</string>
+    <string name="type_a_message">Type a message</string>
 </resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bubble_container"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Space
+        android:layout_width="@dimen/spacer_size_very_small"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:visibility="visible"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bubble"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:padding="@dimen/inset_very_small"
+        android:layout_marginEnd="@dimen/inset_small">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="4dp"
+            android:textColor="@color/text_secondary_alt"
+            android:visibility="gone"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/top_barrier"
+            tools:visibility="visible"
+            tools:text="Today" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/top_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="header"/>
+
+        <RelativeLayout android:id="@+id/message_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_chat_bubble_right"
+            android:layout_marginTop="@dimen/inset_small"
+            app:layout_goneMarginTop="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintEnd_toStartOf="@id/right_spacer"
+            app:layout_constraintBottom_toTopOf="@id/bottom_barrier"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constrainedWidth="true"
+            android:layout_marginEnd="10dp">
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:paddingVertical="@dimen/inset_small"
+                android:paddingHorizontal="@dimen/inset_large"
+                android:textColor="@color/white"
+                tools:text="@tools:sample/lorem" />
+
+        </RelativeLayout>
+
+        <Space android:id="@+id/right_spacer"
+            android:layout_width="10dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/bottom_barrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="time,receipt_status_indicator" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            app:layout_constraintTop_toBottomOf="@id/bottom_barrier"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/receipt_status_indicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            tools:text="5 min ago" />
+
+        <ImageView android:id="@+id/receipt_status_indicator"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:src="@drawable/ic_double_tic"
+            android:visibility="visible"
+            android:contentDescription="@string/content_description_receipt_status_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/time"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toBottomOf="@id/bottom_barrier"
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

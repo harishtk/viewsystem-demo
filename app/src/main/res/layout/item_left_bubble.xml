@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bubble_container"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bubble"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
+        android:padding="@dimen/inset_very_small">
+
+        <TextView style="@style/TextStyle.Tiny.Bold"
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="4dp"
+            android:textColor="@color/text_secondary_alt"
+            android:background="@drawable/bg_rounded"
+            android:backgroundTint="?attr/colorTertiary"
+            android:text="Today"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/top_barrier"
+            tools:visibility="gone"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/top_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="header"/>
+
+        <RelativeLayout android:id="@+id/message_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_chat_bubble_left_alt"
+            android:layout_marginTop="@dimen/inset_small"
+            app:layout_goneMarginTop="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottom_barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constrainedWidth="true"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:id="@+id/tv_message"
+                style="@style/TextStyle.VerySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/inset_small"
+                android:paddingHorizontal="@dimen/inset_large"
+                android:textColor="@color/white"
+                tools:text="@tools:sample/lorem" />
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/bubble_chunk_right"
+            app:tint="?attr/colorTertiary"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/message_container" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/bottom_barrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="time" />
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/TextStyle.Tiny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            tools:text="5 min ago" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Space
+        android:layout_width="@dimen/spacer_size_very_small"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:visibility="visible"/>
+
+</LinearLayout>

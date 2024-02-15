@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph">
 
     <fragment android:id="@+id/routing_page"
         android:name="com.example.viewsystem.core.presentation.routing.RoutingFragment"
-        android:label="Routing Page" />
+        android:label="Routing Page"
+        tools:layout="@layout/fragment_routing" />
 
     <fragment android:id="@+id/flipping_item_page"
         android:name="com.example.viewsystem.feature.flippingitem.FlippingItemFragment"
-        android:label="Flipping Item" />
+        android:label="@string/title_flipping_recyclerview_item"
+        tools:layout="@layout/fragment_flipping_item" />
+
+    <fragment android:id="@+id/lego_text_page"
+        android:name="com.example.viewsystem.feature.legotext.LegoTextFragment"
+        android:label="@string/title_lego_text_blocks"
+        tools:layout="@layout/fragment_lego_text"/>
+
+    <fragment android:id="@+id/calendar_view_page"
+        android:name="com.example.viewsystem.feature.calendarview.CalendarViewFragment"
+        android:label="@string/title_calendar_view"
+        tools:layout="@layout/fragment_calendar_view"/>
 
 </navigation>
