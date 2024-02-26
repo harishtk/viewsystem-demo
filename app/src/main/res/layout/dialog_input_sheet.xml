@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View android:id="@+id/bottom_sheet_handle"
+        android:layout_width="@dimen/bottom_sheet_handle_size"
+        android:layout_height="5dp"
+        android:background="@drawable/bottom_sheet_handle"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/top_barrier"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:visibility="invisible"/>
+
+    <ImageView android:id="@+id/iv_expand_toggle"
+        android:layout_width="@dimen/default_icon_size"
+        android:layout_height="@dimen/default_icon_size"
+        android:src="@drawable/baseline_keyboard_arrow_up_24"
+        app:tint="?attr/colorSecondaryVariant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/top_barrier"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/top_barrier"
+        app:barrierDirection="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierMargin="@dimen/inset_small"
+        app:constraint_referenced_ids="bottom_sheet_handle,iv_expand_toggle" />
+
+    <ImageView android:id="@+id/iv_fullscreen_toggle"
+        style="@style/Widget.App.ImageButton"
+        android:layout_width="@dimen/default_icon_size"
+        android:layout_height="@dimen/default_icon_size"
+        android:layout_margin="@dimen/inset_small"
+        android:background="@drawable/ripple_rounded"
+        android:src="@drawable/baseline_fullscreen_24"
+        app:tint="?attr/colorSecondaryVariant"
+        android:contentDescription="Toggle Full Screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@id/left_barrier"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/left_barrier"
+        app:barrierDirection="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="iv_fullscreen_toggle"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/input_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/inset_small"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/left_barrier"
+        app:layout_constraintTop_toBottomOf="@id/top_barrier"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constrainedWidth="true">
+
+        <LinearLayout android:orientation="vertical"
+            android:id="@+id/input_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/input_2"
+            app:layout_constraintEnd_toStartOf="@id/right_barrier"
+            app:layout_constrainedWidth="true">
+
+            <TextView android:id="@+id/tv_title_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceTitleSmall"
+                android:text="Your message"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/message_input_layout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxCornerRadiusBottomEnd="25dp"
+                app:boxCornerRadiusBottomStart="25dp"
+                app:boxCornerRadiusTopEnd="25dp"
+                app:boxCornerRadiusTopStart="25dp"
+                app:hintEnabled="false"
+                app:hintTextColor="@color/core_grey_50"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="@dimen/text_area_max_height"
+                    android:textColorHint="@color/text_secondary"
+                    android:hint="Type your message here"
+                    tools:text="@tools:sample/lorem/random"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="vertical"
+            android:id="@+id/input_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/input_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/input_3"
+            app:layout_constrainedWidth="true">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.App.Card.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/default_corner_size"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/inset_medium"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/large_icon_size"
+                        android:layout_height="@dimen/large_icon_size"
+                        android:src="@drawable/baseline_calendar_month_24"
+                        android:contentDescription="Due Date" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/inset_medium"
+                        android:textAppearance="?attr/textAppearanceLabelMedium"
+                        android:text="Due Date" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <LinearLayout android:orientation="vertical"
+            android:id="@+id/input_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/input_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/input_4"
+            app:layout_constrainedWidth="true">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.App.Card.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/default_corner_size"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/inset_medium"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/large_icon_size"
+                        android:layout_height="@dimen/large_icon_size"
+                        android:src="@drawable/baseline_notifications_24"
+                        android:contentDescription="Remainder" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/inset_medium"
+                        android:textAppearance="?attr/textAppearanceLabelMedium"
+                        android:text="No Remainders" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <LinearLayout android:orientation="vertical"
+            android:id="@+id/input_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/input_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constrainedWidth="true">
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/right_barrier"
+            app:barrierDirection="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="iv_send"/>
+
+        <com.google.android.material.imageview.ShapeableImageView android:id="@+id/iv_send"
+            style="@style/Widget.App.ImageButton"
+            android:layout_width="@dimen/touchable_icon_size"
+            android:layout_height="@dimen/touchable_icon_size"
+            android:layout_margin="@dimen/inset_small"
+            android:contentDescription="@string/content_description_send_message"
+            android:src="@drawable/ic_send"
+            app:tint="?attr/colorOnPrimary"
+            app:shapeAppearance="@style/ShapeAppearance.App.Circle"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/right_barrier"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,4 +24,14 @@
         android:label="@string/title_calendar_view"
         tools:layout="@layout/fragment_calendar_view"/>
 
+    <fragment android:id="@+id/input_sheet_page"
+        android:name="com.example.viewsystem.feature.inputsheet.InputSheetFragment"
+        android:label="@string/title_input_sheet"
+        tools:layout="@layout/fragment_input_sheet" />
+
+    <fragment android:id="@+id/list_motions_page"
+        android:name="com.example.viewsystem.feature.listmotions.ListMotionsFragment"
+        android:label="@string/title_list_motions"
+        tools:layout="@layout/fragment_list_motions" />
+
 </navigation>

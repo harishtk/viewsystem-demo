@@ -126,7 +126,7 @@ class CalendarViewFragment
     }
 
     private fun FragmentCalendarViewBinding.bindAndroidCalendar() {
-        androidCalendarView.setDate(Date().time, true, true)
+        // androidCalendarView.setDate(Date().time, true, true)
     }
 
     private fun FragmentCalendarViewBinding.bindToolbar() {

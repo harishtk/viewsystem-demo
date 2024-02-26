@@ -17,9 +17,10 @@ import com.example.viewsystem.databinding.FragmentRoutingBinding
 import com.example.viewsystem.databinding.ItemDemoListingBinding
 import com.example.viewsystem.feature.calendarview.navigateToCalendarView
 import com.example.viewsystem.feature.flippingitem.navigateToFlippingItemScreen
+import com.example.viewsystem.feature.inputsheet.navigateToInputSheetScreen
 import com.example.viewsystem.feature.legotext.navigateToLegoTextBlocks
+import com.example.viewsystem.feature.listmotions.navigateToListMotionsScreen
 import com.google.android.material.transition.MaterialElevationScale
-import timber.log.Timber
 
 class RoutingFragment : Fragment(R.layout.fragment_routing) {
 
@@ -40,13 +41,17 @@ class RoutingFragment : Fragment(R.layout.fragment_routing) {
                 0 -> gotoFlippingRecyclerViewItem(view)
                 1 -> gotoLegoTextBlocksFragment(view)
                 2 -> gotoCalendarViewFragment(view)
+                3 -> gotoInputSheetFragment(view)
+                4 -> gotoListMotionsFragment(view)
             }
         }.apply {
             submitList(
                 listOf(
                     DemoItem(0, getString(R.string.title_flipping_recyclerview_item)),
                     DemoItem(1, getString(R.string.title_lego_text_blocks)),
-                    DemoItem(2, getString(R.string.title_calendar_view))
+                    DemoItem(2, getString(R.string.title_calendar_view)),
+                    DemoItem(3, getString(R.string.title_input_sheet)),
+                    DemoItem(4, getString(R.string.title_list_motions))
                 )
             )
         }
@@ -113,6 +118,48 @@ class RoutingFragment : Fragment(R.layout.fragment_routing) {
         )
 
         findNavController().navigateToCalendarView(
+            args = args, null, extras = extras
+        )
+    }
+
+    private fun gotoInputSheetFragment(
+        view: View
+    ) {
+        resetTransitions()
+        enterTransition = MaterialElevationScale(/* growing= */ false)
+        exitTransition = MaterialElevationScale(/* growing= */ false)
+        reenterTransition = MaterialElevationScale(/* growing= */ true)
+
+        val args = bundleOf(
+            "from" to "routing",
+            "titleTransitionName" to view.transitionName
+        )
+        val extras = FragmentNavigatorExtras(
+            view to view.transitionName
+        )
+
+        findNavController().navigateToInputSheetScreen(
+            args = args, null, extras = extras
+        )
+    }
+
+    private fun gotoListMotionsFragment(
+        view: View
+    ) {
+        resetTransitions()
+        enterTransition = MaterialElevationScale(/* growing= */ false)
+        exitTransition = MaterialElevationScale(/* growing= */ false)
+        reenterTransition = MaterialElevationScale(/* growing= */ true)
+
+        val args = bundleOf(
+            "from" to "routing",
+            "titleTransitionName" to view.transitionName
+        )
+        val extras = FragmentNavigatorExtras(
+            view to view.transitionName
+        )
+
+        findNavController().navigateToListMotionsScreen(
             args = args, null, extras = extras
         )
     }

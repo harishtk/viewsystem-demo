@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/corner_size_small"
+    app:cardElevation="0dp"
+    android:elevation="0dp"
+    app:cardMaxElevation="0dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/bg_selectable_primary"
+    tools:cardBackgroundColor="@null">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/text_view_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/inset_medium"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_drag_indicator"
+            tools:text="@tools:sample/full_names" />
+
+        <ImageView android:id="@+id/iv_drag_indicator"
+            android:layout_width="@dimen/touchable_icon_size"
+            android:layout_height="@dimen/touchable_icon_size"
+            android:padding="@dimen/touchable_padding_large"
+            android:src="@drawable/baseline_drag_handle_24"
+            app:tint="?attr/colorOnBackground"
+            android:alpha="0.3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text_view_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

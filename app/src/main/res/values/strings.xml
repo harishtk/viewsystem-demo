@@ -4,6 +4,8 @@
     <string name="title_flipping_recyclerview_item">Flipping RecyclerView Item</string>
     <string name="title_lego_text_blocks">Lego Text Blocks</string>
     <string name="title_calendar_view">Haibin CalendarView</string>
+    <string name="title_input_sheet">Input Sheet</string>
+    <string name="title_list_motions">List Motions</string>
 
     <string name="unable_to_perform_this_action">Unable to perform this action!</string>
 
@@ -31,5 +33,6 @@
     <string name="content_description_app_info">Application Info</string>
     <string name="content_description_send_message">Send Message</string>
     <string name="content_description_receipt_status_indicator">Message Receipt Status Indicator</string>
+    <string name="content_description_add">Add</string>
     <string name="type_a_message">Type a message</string>
 </resources>

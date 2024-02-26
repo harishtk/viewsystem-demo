@@ -5,6 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:forceDarkAllowed" tools:targetApi="Q">false</item>
         <item name="android:enforceNavigationBarContrast" tools:targetApi="Q">false</item>
+
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
     </style>
 
     <style name="Theme.ViewSystem" parent="Base.Theme.ViewSystem">
@@ -152,7 +154,7 @@
     </style>
 
     <style name="ThemeOverlay.App.ImageButton" parent="">
-        <item name="colorOnPrimary">@color/black</item>
+
     </style>
 
     <style name="ThemeOverlay.App.Dialog" parent="">
@@ -202,10 +204,8 @@
     </style>
 
     <!-- Bottom sheet -->
-    <style name="ThemeOverlay.App.BottomSheetDialog" parent="">
-        <!--<item name="colorPrimary">@color/yellow_200</item>
-        <item name="colorSurface">@color/yellow_100</item>
-        <item name="colorOnSurface">@color/black</item>-->
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
     </style>
     <!-- END - Bottom sheet -->
 

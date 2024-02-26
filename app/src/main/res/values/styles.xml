@@ -209,6 +209,12 @@
         <!-- END - Material 3 -->
     </style>
 
+    <style name="ModalBottomSheetDialog" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/profile_chip_background</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFrame">@null</item>
+    </style>
+
     <style name="Widget.App.BottomSheetDialog" parent="Base.App.BottomSheetDialog">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="android:windowAnimationStyle">@style/BottomSheetWindowAnimationStyle</item>
