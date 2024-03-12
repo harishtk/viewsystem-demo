@@ -12,6 +12,16 @@
     app:cardBackgroundColor="@color/bg_selectable_primary"
     tools:cardBackgroundColor="@null">
 
+    <TextView android:id="@+id/tv_hint_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceLabelSmall"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintEnd_toStartOf="@id/text_view_1"
+        app:layout_constraintTop_toTopOf="@id/text_view_1"
+        app:layout_constraintBottom_toBottomOf="@id/text_view_1"
+        tools:text="\u2022 2"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

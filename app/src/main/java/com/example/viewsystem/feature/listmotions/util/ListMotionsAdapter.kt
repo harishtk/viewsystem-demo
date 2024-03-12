@@ -90,6 +90,7 @@ class ListMotionsAdapter(
                 ResourcesCompat.getColor(root.resources, R.color.core_grey_02, null)
             )*/
             textView1.setText(data.data)
+            tvHintLabel.setText("\u2022 ${data.sortPosition}")
 
             ivDragIndicator.setOnTouchListener { v, event ->
                 when (event.action) {

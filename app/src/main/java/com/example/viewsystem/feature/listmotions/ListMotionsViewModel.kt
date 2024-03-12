@@ -16,6 +16,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.Collections
 import javax.inject.Inject
+import kotlin.properties.Delegates
 import kotlin.time.Duration.Companion.days
 
 @HiltViewModel
@@ -25,7 +26,7 @@ class ListMotionsViewModel @Inject constructor(
 
     private val _items = MutableStateFlow<List<SortingItem>>(emptyList())
     val items = _items
-        // .map { list -> list.sortedBy { it.sortPosition } }
+        .map { list -> list.sortedBy { it.sortPosition } }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),
@@ -81,22 +82,22 @@ class ListMotionsViewModel @Inject constructor(
         val currentList = _items.value.toMutableList()
         val fromItem = currentList[fromPosition]
         val toItem = currentList[toPosition]
+        val tempFromSortPosition = fromItem.sortPosition
+        val tempToSortPosition = toItem.sortPosition
 
-        _items.update {
-            currentList.map {
-                when (it.data) {
-                    fromItem.data -> {
-                        it.copy(sortPosition = toItem.sortPosition)
-                    }
-                    toItem.data -> {
-                        it.copy(sortPosition = fromItem.sortPosition)
-                    }
-                    else -> {
-                        it
-                    }
+        currentList.onEach {
+            when (it.data) {
+                fromItem.data -> {
+                    it.sortPosition = tempToSortPosition
+                }
+                toItem.data -> {
+                    it.sortPosition = tempFromSortPosition
                 }
             }
         }
+        Timber.d("Reordering: from=$fromItem to=${toItem}")
+        _items.update { currentList }
+        Timber.d("New list; ${currentList.sortedBy { it.sortPosition }}")
     }
 
     private fun getCount(): Int {
@@ -105,8 +106,17 @@ class ListMotionsViewModel @Inject constructor(
 
 }
 
+@Deprecated("Not working as expected")
 data class SortingItem(
     val data: String,
+) {
     /* Note: sortPosition != index but sortPosition.default = index */
-    val sortPosition: Int,
-)
+    var sortPosition: Int by Delegates.notNull()
+    constructor(data: String, sortPosition: Int): this(data) {
+        this.sortPosition = sortPosition
+    }
+
+    override fun toString(): String {
+        return "SortingItem(data=$data, sortingPosition=$sortPosition)"
+    }
+}

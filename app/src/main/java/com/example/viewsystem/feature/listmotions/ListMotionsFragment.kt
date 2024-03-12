@@ -91,7 +91,7 @@ class ListMotionsFragment : Fragment(R.layout.fragment_list_motions), OnItemDrag
 
         viewLifecycleOwner.lifecycleScope.launch {
             withContext(Dispatchers.Main) {
-                for (i in 1..5) {
+                for (i in 1..3) {
                     viewModel.addItem()
                 }
             }
@@ -113,7 +113,7 @@ class ListMotionsFragment : Fragment(R.layout.fragment_list_motions), OnItemDrag
             },
             onMoved = { fromPosition, toPosition ->
                 // TODO: reordering is buggy
-                // viewModel.reorderItems(fromPosition, toPosition)
+                viewModel.reorderItems(fromPosition, toPosition)
                 true
             },
             onItemDragListener = this@ListMotionsFragment
