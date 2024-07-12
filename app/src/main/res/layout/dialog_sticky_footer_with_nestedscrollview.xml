@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:isScrollContainer="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ScrollView android:id="@+id/scroll_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constrainedHeight="true"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/footer_container">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View android:id="@+id/bottom_sheet_handle"
+                    android:layout_width="@dimen/bottom_sheet_handle_size"
+                    android:layout_height="5dp"
+                    android:background="@drawable/bottom_sheet_handle"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/top_barrier"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+                <ImageView android:id="@+id/iv_expand_toggle"
+                    android:layout_width="@dimen/default_icon_size"
+                    android:layout_height="@dimen/default_icon_size"
+                    android:src="@drawable/baseline_keyboard_arrow_up_24"
+                    app:tint="?attr/colorSecondaryVariant"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/top_barrier"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    android:visibility="gone" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/top_barrier"
+                    app:barrierDirection="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierMargin="@dimen/inset_small"
+                    app:constraint_referenced_ids="bottom_sheet_handle,iv_expand_toggle" />
+
+                <LinearLayout android:id="@+id/dummy_views"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@color/material_red400" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@color/material_green400" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@color/material_amber400" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@color/material_pink400" />
+
+                </LinearLayout>
+
+
+                <Space android:id="@+id/spacer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacer_height_huge"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dummy_views"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/footer_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/material_cyan400"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <View android:id="@+id/footer_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/material_cyan400"
+                android:elevation="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_apply"
+                style="@style/Widget.App.Button.TextButton.Dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_ok"
+                android:layout_gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_reset"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reset"
+                style="@style/Widget.App.Button.TextButton.Dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_cancel"
+                android:textColor="?attr/colorError"
+                app:rippleColor="?attr/colorErrorContainer"
+                android:layout_gravity="center"
+                app:layout_constraintStart_toEndOf="@id/btn_apply"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

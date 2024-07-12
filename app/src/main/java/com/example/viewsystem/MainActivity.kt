@@ -24,8 +24,10 @@ import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import androidx.window.layout.WindowMetricsCalculator
+import com.example.viewsystem.core.di.AppDependencies
 import com.example.viewsystem.databinding.ActivityMainBinding
 import com.example.viewsystem.extensions.Log.tag
+import com.example.viewsystem.extensions.getDisplaySize
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigationrail.NavigationRailView
 import com.google.android.material.snackbar.Snackbar
@@ -79,6 +81,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         WindowCompat.setDecorFitsSystemWindows(window, false)
         enableEdgeToEdge()
 
+        AppDependencies.displaySize = getDisplaySize()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupWindowSizeClass(binding.root)

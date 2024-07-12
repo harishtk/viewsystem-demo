@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.viewsystem.R
 import com.example.viewsystem.databinding.FragmentRoutingBinding
 import com.example.viewsystem.databinding.ItemDemoListingBinding
+import com.example.viewsystem.feature.bottomsheet.navigateToStickyFooterBottomSheetScreen
 import com.example.viewsystem.feature.calendarview.navigateToCalendarView
 import com.example.viewsystem.feature.flippingitem.navigateToFlippingItemScreen
 import com.example.viewsystem.feature.inputsheet.navigateToInputSheetScreen
@@ -43,6 +44,7 @@ class RoutingFragment : Fragment(R.layout.fragment_routing) {
                 2 -> gotoCalendarViewFragment(view)
                 3 -> gotoInputSheetFragment(view)
                 4 -> gotoListMotionsFragment(view)
+                5 -> gotoStickyFooterWithBottomSheetFragment(view)
             }
         }.apply {
             submitList(
@@ -51,7 +53,8 @@ class RoutingFragment : Fragment(R.layout.fragment_routing) {
                     DemoItem(1, getString(R.string.title_lego_text_blocks)),
                     DemoItem(2, getString(R.string.title_calendar_view)),
                     DemoItem(3, getString(R.string.title_input_sheet)),
-                    DemoItem(4, getString(R.string.title_list_motions))
+                    DemoItem(4, getString(R.string.title_list_motions)),
+                    DemoItem(5, getString(R.string.title_sticky_footer_with_bottom_sheet)),
                 )
             )
         }
@@ -160,6 +163,27 @@ class RoutingFragment : Fragment(R.layout.fragment_routing) {
         )
 
         findNavController().navigateToListMotionsScreen(
+            args = args, null, extras = extras
+        )
+    }
+
+    private fun gotoStickyFooterWithBottomSheetFragment(
+        view: View
+    ) {
+        resetTransitions()
+        enterTransition = MaterialElevationScale(/* growing= */ false)
+        exitTransition = MaterialElevationScale(/* growing= */ false)
+        reenterTransition = MaterialElevationScale(/* growing= */ true)
+
+        val args = bundleOf(
+            "from" to "routing",
+            "titleTransitionName" to view.transitionName
+        )
+        val extras = FragmentNavigatorExtras(
+            view to view.transitionName
+        )
+
+        findNavController().navigateToStickyFooterBottomSheetScreen(
             args = args, null, extras = extras
         )
     }

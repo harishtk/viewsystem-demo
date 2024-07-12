@@ -6,6 +6,7 @@
     <string name="title_calendar_view">Haibin CalendarView</string>
     <string name="title_input_sheet">Input Sheet</string>
     <string name="title_list_motions">List Motions</string>
+    <string name="title_sticky_footer_with_bottom_sheet">Sticky Footer with BottomSheet</string>
 
     <string name="unable_to_perform_this_action">Unable to perform this action!</string>
 
@@ -16,6 +17,9 @@
     <string name="you_are_not_connected_to_the_internet">You are not connected to the internet</string>
     <string name="no_internet_des_1">Uh-oh! It looks like you\'re not connected to the internet right now. Please check your internet connection!</string>
     <string name="unknown_error">Unknown Error</string>
+
+    <string name="label_ok">OK</string>
+    <string name="label_cancel">Cancel</string>
 
     <string-array name="english_week_string_array">
         <item>Sun</item>

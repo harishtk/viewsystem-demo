@@ -34,4 +34,9 @@
         android:label="@string/title_list_motions"
         tools:layout="@layout/fragment_list_motions" />
 
+    <fragment android:id="@+id/sticky_footer_with_bottom_sheet_page"
+        android:name="com.example.viewsystem.feature.bottomsheet.StickyViewWithBottomSheetFragment"
+        android:label="@string/title_sticky_footer_with_bottom_sheet"
+        tools:layout="@layout/fragment_sticky_footer_bottom_sheet" />
+
 </navigation>
